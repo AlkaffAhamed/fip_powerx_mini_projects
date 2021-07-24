@@ -3,6 +3,7 @@ import random
 
 array = []
 
+
 def gen_random_int(number, seed):
   pass
 
@@ -101,5 +102,40 @@ def sort_arr(arr):
     # Swap positions
     arr[inner_index] = temp
 
+# Insertion Sort
+def insertion_sort(array):
+    n = len(array)
+
+    # Outer Loop
+    for i in range(1, n):
+        # Set Inner Loop strating index = Outer Loop
+        j = i
+        # Start the Inner Loop
+        # Loop must break if decrement j all the way till 0 & if previous element > element j
+        while j > 0 and float(array[j]) < float(array[j - 1]):
+            array[j], array[j - 1] = array[j - 1], array[j]
+            j -= 1
 
 
+# Bubble Sort
+def bubble_sort(array):
+    # count = 0
+    n = len(array)
+    isSwap = True
+
+    # While loop replaces the outer for loop
+    while isSwap:
+        isSwap = False
+        lastIndex = 0
+        # print("-----")
+        # Maintaining j as Inner loop iterator
+        for j in range(n - 1):
+            # Swap if next element < current element
+            #count += 1
+            if array[j + 1] < array[j]:
+                array[j + 1], array[j] = array[j], array[j + 1]
+                isSwap = True  # Swapping happened, so unset flag
+                lastIndex = j + 1  # Extract last index + 1 (j + 1) because array is sorted till j+1, not j
+        # print(array, j, n, lastIndex, count)
+        n = lastIndex  # And set as new n for inner loop
+	#return count
