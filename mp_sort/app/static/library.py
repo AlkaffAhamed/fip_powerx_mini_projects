@@ -5,7 +5,9 @@ array = []
 
 
 def gen_random_int(number, seed):
-  pass
+    result = list(range(number))
+    random.shuffle(result, random.seed(seed))
+    return result
 
 def generate():
   global array
@@ -15,15 +17,13 @@ def generate():
 
   # call gen_random_int() with the given number and seed
   # store it to the global variable array
-  pass
 
-  array = None
+  array = gen_random_int(number, seed)
   # convert the items into one single string
   # the number should be separated by a comma
   # and a full stop should end the string.
-  pass
 
-  array_str = None
+  array_str = ','.join(array) + '.'
 
   # This line is to placed the string into the HTML
   # under div section with the id called "generate"
@@ -40,9 +40,12 @@ def sortnumber1():
       call your sort function, either bubble sort or insertion sort
       create a string of the sorted numbers and store it in array_str
   '''
-  pass
+  
+  global array
 
-  array_str = None
+  newArray = array
+  sort_arr(newArray)
+  array_str = ', '.join(array)
 
   document.getElementById("sorted").innerHTML = array_str
 
