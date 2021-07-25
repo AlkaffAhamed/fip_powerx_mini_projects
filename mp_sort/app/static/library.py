@@ -43,8 +43,12 @@ def sortnumber1():
   
   global array
 
-  newArray = array
-  sort_arr(newArray)
+  if random.random() < 0.5:
+    print("Insertion Sorting...")
+    sort_arr(array)
+  else:
+    print("Bubble Sorting...")
+    sort_arr(array)
   array_str = ', '.join(array)
 
   document.getElementById("sorted").innerHTML = array_str
@@ -73,7 +77,13 @@ def sortnumber2():
   num_str_arr = value.split(',')
   # Typecast all elements
   numbers = list(map(str_to_num, num_str_arr))
-  sort_arr(numbers)
+
+  if random.random() < 0.5:
+    print("Insertion Sorting...")
+    sort_arr(numbers)
+  else:
+    print("Bubble Sorting...")
+    sort_arr(numbers)
 
   array_str = ', '.join(str(num) for num in numbers)
 
@@ -89,22 +99,6 @@ def str_to_num(string):
     window.alert("Non number provided")
     return
 
-def sort_arr(arr):
-  # Sort by Insertion Sort
-  n = len(arr)
-  for outer_index in range(1, n):
-    inner_index = outer_index
-    temp = arr[inner_index]
-    while (inner_index > 0 and temp < arr[inner_index - 1]):
-      # Number at inner index is smaller than previous number on the left
-      # Move previous number to inner index
-      arr[inner_index] = arr[inner_index - 1]
-      # Update inner index
-      inner_index -= 1
-    # Inner index now at lowest value satisfying loop condition
-    # Swap positions
-    arr[inner_index] = temp
-
 # Insertion Sort
 def insertion_sort(array):
     n = len(array)
@@ -119,7 +113,6 @@ def insertion_sort(array):
             array[j], array[j - 1] = array[j - 1], array[j]
             j -= 1
 
-
 # Bubble Sort
 def bubble_sort(array):
     # count = 0
@@ -130,7 +123,6 @@ def bubble_sort(array):
     while isSwap:
         isSwap = False
         lastIndex = 0
-        # print("-----")
         # Maintaining j as Inner loop iterator
         for j in range(n - 1):
             # Swap if next element < current element
@@ -139,6 +131,4 @@ def bubble_sort(array):
                 array[j + 1], array[j] = array[j], array[j + 1]
                 isSwap = True  # Swapping happened, so unset flag
                 lastIndex = j + 1  # Extract last index + 1 (j + 1) because array is sorted till j+1, not j
-        # print(array, j, n, lastIndex, count)
         n = lastIndex  # And set as new n for inner loop
-	#return count
