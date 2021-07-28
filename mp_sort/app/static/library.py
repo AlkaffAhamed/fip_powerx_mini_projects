@@ -45,10 +45,10 @@ def sortnumber1():
 
   if random.random() < 0.5:
     print("Insertion Sorting...")
-    sort_arr(array)
+    insertion_sort(array)
   else:
     print("Bubble Sorting...")
-    sort_arr(array)
+    bubble_sort(array)
   array_str = ', '.join(array)
 
   document.getElementById("sorted").innerHTML = array_str
@@ -80,10 +80,10 @@ def sortnumber2():
 
   if random.random() < 0.5:
     print("Insertion Sorting...")
-    sort_arr(numbers)
+    insertion_sort(numbers)
   else:
     print("Bubble Sorting...")
-    sort_arr(numbers)
+    bubble_sort(numbers)
 
   array_str = ', '.join(str(num) for num in numbers)
 
