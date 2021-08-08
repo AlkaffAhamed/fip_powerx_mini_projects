@@ -1,9 +1,9 @@
 {% extends "bootstrap/base.html" %}
 {% block title %}
       {% if title %}
-      {{ title }} - Mini Project 2
+      {{ title }} - Final Project 
       {% else %}
-      Welcome to Mini Project 2
+      Welcome to Final Project 
       {% endif %}
 {% endblock %}
 
@@ -18,9 +18,6 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('questions') }}">Questions</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('challenges') }}">Challenges</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url_for('halloffame') }}">Hall of Fame</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ url_for('users') }}">Users</a></li>
         </ul>
         <ul class="navbar-nav navbar-right">
